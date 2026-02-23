@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # 1. 你的私有图床服务
+  nano-imgbed:
+    build: .
+    container_name: nano-imgbed
+    restart: always
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      # 👇 在这里设置你真正的超强密码！
+      - AUTH_TOKEN=Ouch_Top_Secret_2026!
+    # 注意：这里我们故意删掉了 ports 映射，拒绝物理机的直接访问，安全性拉满！
+
+  # 2. Cloudflare 隧道服务
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-imgbed
+    restart: always
+    command: tunnel run
+    environment:
+      # 👇 把这里换成你去 Cloudflare 后台获取的真实 Token
+      - TUNNEL_TOKEN=eyJhIjoi...你的完整Token...
