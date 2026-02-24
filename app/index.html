@@ -94,7 +94,7 @@
     </div>
     <h2 class="login-title">私有图床安全验证</h2>
     <div class="login-sub">请输入您的专属访问密钥以继续</div>
-    <input type="password" id="passInput" class="input-box" placeholder="默认密钥: 123456" onkeydown="if(event.key==='Enter') login()">
+    <input type="password" id="passInput" class="input-box" placeholder="" onkeydown="if(event.key==='Enter') login()">
     <button class="btn-primary" onclick="login()">安全解锁进入</button>
 </div>
 
@@ -118,7 +118,7 @@
         <div class="upload-zone" id="dropZone">
             <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
             <div style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">点击、拖拽 或 Ctrl+V 粘贴图片至此</div>
-            <div style="color: var(--text-muted); font-size: 13px;">前端无损 WebP 压缩 · 阅后即焚</div>
+            <div style="color: var(--text-muted); font-size: 13px;">前端无损 WebP 压缩 · 阅后可焚</div>
         </div>
         <input type="file" id="fileInput" style="display: none;" accept="image/*">
 
@@ -126,7 +126,7 @@
             <label><input type="checkbox" id="cWebp" checked> WebP 压缩</label>
             <div class="range-wrap">
                 <input type="range" id="cQual" min="10" max="100" value="90" oninput="document.getElementById('qv').innerText=this.value">
-                <span class="q-val" id="qv">90</span>
+                <span class="q-val" id="qv">95</span>
             </div>
 
             <label style="margin-left: 10px;"><input type="checkbox" id="cWm"> 添加水印</label>
